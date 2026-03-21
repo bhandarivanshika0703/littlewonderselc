@@ -87,9 +87,9 @@
                     <!-- Logo in center -->
                     <a href="{% url 'home' %}" class="px-4 xl:px-8 flex items-center justify-center">
     <img 
-        src="{% static 'images/logo2.png' %}" 
+        src="{% static 'images1/logo2.png' %}" 
         alt="Little Wonders Logo"
-        class="h-10 xl:h-12 object-contain transition duration-300 hover:scale-105"
+        class="h-24 xl:h-28 object-contain transition duration-300 hover:scale-105"
     >
 </a>
 
@@ -167,9 +167,13 @@
                 </div>
 
                 <!-- Mobile Logo -->
-                <div class="lg:hidden flex-1 text-center">
-                    <h1 class="text-lg font-bold gradient-text">Little Wonders</h1>
-                </div>
+             <div class="lg:hidden flex-1 flex justify-center items-center">
+    <img 
+        src="{% static 'images1/logo2.png' %}" 
+        alt="Little Wonders Logo"
+        class="h-24 object-contain transition duration-300 hover:scale-105"
+    >
+</div>
 
                 <div class="lg:hidden w-10"></div>
             </div>
