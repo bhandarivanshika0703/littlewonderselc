@@ -85,9 +85,13 @@
                     </div>
 
                     <!-- Logo in center -->
-                    <div class="px-4 xl:px-8">
-                        <h1 class="text-xl xl:text-2xl font-extrabold gradient-text whitespace-nowrap">Little Wonders</h1>
-                    </div>
+                    <a href="{% url 'home' %}" class="px-4 xl:px-8 flex items-center justify-center">
+    <img 
+        src="{% static 'images/logo2.png' %}" 
+        alt="Little Wonders Logo"
+        class="h-10 xl:h-12 object-contain transition duration-300 hover:scale-105"
+    >
+</a>
 
                     <!-- Our Facilities - DROPDOWN -->
                     <div class="nav-dropdown">

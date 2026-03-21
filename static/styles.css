@@ -338,12 +338,9 @@ html {
     font-weight: 600;
 }
 
-/* Gradient Text */
-.gradient-text {
-      background: linear-gradient(90deg, #F59E0B, #FCD34D);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 @keyframes gradientShift {
