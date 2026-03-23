@@ -310,7 +310,7 @@
             <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold mb-4">Kindergarten Gallery</h1>
             <p class="text-2xl sm:text-3xl">School Readiness Programs for Ages 3-5 in Ballarat</p>
             <div class="mt-6">
-                <a href="../gallery.html" class="inline-block text-white hover:text-[#58C7F3] transition-colors text-lg">
+                <a href="{% url 'gallery' %}" class="inline-block text-white hover:text-[#58C7F3] transition-colors text-lg">
                     ← Back to All Galleries
                 </a>
             </div>
@@ -331,15 +331,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="gallery-grid">
                 <!-- Row 1 -->
-                <div class="gallery-item h-64" data-caption="Early literacy development and phonics activities">
-                    <img src="{% static 'images1/gallery4.webp' %}" alt="Kindergarten literacy activities at Little Wonders Ballarat" loading="lazy">
-                </div>
+               
                 <div class="gallery-item h-64" data-caption="Mathematics exploration with hands-on materials">
                     <img src="{% static 'images1/gallery.webp' %}" alt="Kinder math learning Ballarat childcare" loading="lazy">
                 </div>
-                <div class="gallery-item h-64" data-caption="Science experiments fostering inquiry and discovery">
-                    <img src="{% static 'images1/gallery8.webp' %}" alt="Science activities kindergarten Little Wonders" loading="lazy">
-                </div>
+            
                 <div class="gallery-item h-64" data-caption="Creative arts developing self-expression">
                     <img src="{% static 'images1/gallery16.webp' %}" alt="Art program kindergarten Ballarat" loading="lazy">
                 </div>
@@ -348,9 +344,7 @@
                 <div class="gallery-item h-80" data-caption="Reading and writing skills for school success">
                     <img src="{% static 'images1/gallery20.webp' %}" alt="Literacy program kindergarten Ballarat childcare" loading="lazy">
                 </div>
-                <div class="gallery-item h-80" data-caption="Collaborative learning and teamwork activities">
-                    <img src="{% static 'images1/gallery17.webp' %}" alt="Group learning kindergarten Little Wonders" loading="lazy">
-                </div>
+               
                 <div class="gallery-item h-80" data-caption="Technology integration and digital literacy">
                     <img src="{% static 'images1/gallery15.webp' %}" alt="Technology learning kinder Ballarat" loading="lazy">
                 </div>
@@ -392,9 +386,7 @@
                 </div>
 
                 <!-- Row 6 -->
-                <div class="gallery-item h-80" data-caption="Excursions and community connections">
-                    <img src="{% static 'images1/pp.webp' %}" alt="Excursions kindergarten Ballarat childcare" loading="lazy">
-                </div>
+                
                 <div class="gallery-item h-80" data-caption="Cooking experiences learning life skills">
                     <img src="{% static 'images1/tt.webp' %}" alt="Cooking program kinder Little Wonders" loading="lazy">
                 </div>
