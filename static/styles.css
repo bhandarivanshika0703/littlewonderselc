@@ -358,6 +358,14 @@ img {
 }
 
 /* Page Header */
+.hero-button {
+    background: #FACC15;
+    color: #14532D;
+}
+
+.hero-button:hover {
+    background: #EAB308;
+}
 .page-header {
     background: linear-gradient(135deg, #58C7F3 0%, #9A6BD8 100%);
     color: white;
