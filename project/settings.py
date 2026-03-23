@@ -8,13 +8,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ======================
 SECRET_KEY = 'django-insecure-(x&+!t37j_3e%j3(ogad5%^7q#&sgy2h70iigs$k9mt()dw@t+'
 
-DEBUG = False  # ✅ IMPORTANT for production
+DEBUG = True  # Keep True for now (local testing)
 
-ALLOWED_HOSTS = [
-    "littlewonderselc.onrender.com",
-    "localhost",
-    "127.0.0.1"
-]
+ALLOWED_HOSTS = ['*']
+
 
 # ======================
 # APPLICATIONS
@@ -29,12 +26,13 @@ INSTALLED_APPS = [
     'app',
 ]
 
+
 # ======================
 # MIDDLEWARE
 # ======================
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # ✅ REQUIRED
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -43,7 +41,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
 ROOT_URLCONF = 'project.urls'
+
 
 # ======================
 # TEMPLATES
@@ -63,7 +63,9 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'project.wsgi.application'
+
 
 # ======================
 # DATABASE
@@ -74,6 +76,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 # ======================
 # PASSWORD VALIDATION
@@ -93,6 +96,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 # ======================
 # INTERNATIONAL
 # ======================
@@ -100,6 +104,7 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
+
 
 # ======================
 # STATIC FILES
@@ -112,14 +117,16 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# ✅ FIXED (no hashing issue for video)
+# ✅ FIXED (NO HASHING ISSUE)
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
 
 # ======================
 # MEDIA FILES
 # ======================
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # ======================
 # DEFAULT PRIMARY KEY
