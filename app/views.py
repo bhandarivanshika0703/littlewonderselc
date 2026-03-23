@@ -22,8 +22,15 @@ def nurseryprogram(request):
     return render(request,"our-programs/nursery.html")
 
 
+def nurseryadvanced(request):
+    return render(request,"our-programs/nursery2.html")
+
+
 def toddlersprogram(request):
     return render(request,"our-programs/toddlers.html")
+
+def toddlersadvanced(request):
+    return render(request,"our-programs/toddler2.html")
 
 
 def prekinderprogram(request):

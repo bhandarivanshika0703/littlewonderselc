@@ -13,7 +13,9 @@ urlpatterns = [
     path("ourprograms/", views.ourprograms, name="ourprograms"),
 
     path("nurseryprogram/", views.nurseryprogram, name="nurseryprogram"),
+    path("nurseryprogram2/", views.nurseryadvanced, name="nurseryprogram2"),
     path("toddlersprogram/", views.toddlersprogram, name="toddlersprogram"),
+    path("toddlersprogram2/", views.toddlersadvanced, name="toddlersprogram2"),
     path("prekinderprogram/", views.prekinderprogram, name="prekinderprogram"),
     path("kindergartenprogram/", views.kindergartenprogram, name="kindergartenprogram"),
 
@@ -31,6 +33,7 @@ urlpatterns = [
     path("nurserytwo/", views.nurserytwo, name="nurserytwo"),
     path("nursery/", views.nursery, name="nursery"),
     path("prekinder/", views.prekinder, name="prekinder"),
+    
 
     path("toddlerone/", views.toddlerone, name="toddlerone"),
     path("toddlertwo/", views.toddlertwo, name="toddlertwo"),
