@@ -1013,19 +1013,23 @@
                 </div>
 
                 <!-- Video Wrapper -->
-                <div
-                    class="relative bg-white rounded-3xl shadow-2xl p-2 sm:p-3 md:p-4 transform hover:scale-[1.02] transition-all duration-300">
-                    <!-- Aspect Ratio Container -->
-                    <div class="relative w-full overflow-hidden rounded-2xl shadow-xl aspect-video">
-                        {% load static %}
+               {% load static %}
 
-                        <video width="100%" controls autoplay muted loop class="rounded-2xl shadow-lg">
-                            <source src="{% static 'videos/demo.mp4' %}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
+<div class="relative bg-white rounded-3xl shadow-2xl p-2 sm:p-3 md:p-4 transform hover:scale-[1.02] transition-all duration-300">
+    
+    <div class="relative w-full overflow-hidden rounded-2xl shadow-xl aspect-video">
+        
+        <video 
+            class="w-full h-full object-cover rounded-2xl"
+            controls
+            preload="metadata"
+        >
+            <source src="{% static 'videos/demo.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
+    </div>
+</div>
                 <!-- Decorative Elements Around Video -->
                 <div
                     class="absolute -top-8 -left-8 w-24 h-24 bg-[#8ED16F] rounded-full opacity-50 blur-2xl animate-pulse">

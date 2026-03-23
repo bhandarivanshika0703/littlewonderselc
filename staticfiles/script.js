@@ -107,3 +107,19 @@ btn.onclick = () => window.scrollTo({top:0, behavior:'smooth'});
 
 // Console message
 console.log("✅ JS Loaded Successfully");
+
+// ✅ MOBILE DROPDOWN FIX
+document.querySelectorAll('.mobile-dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function (e) {
+        e.stopPropagation(); // prevent conflicts
+
+        const parent = this.closest('.mobile-dropdown');
+
+        // Close others (optional but clean UX)
+        document.querySelectorAll('.mobile-dropdown').forEach(d => {
+            if (d !== parent) d.classList.remove('open');
+        });
+
+        parent.classList.toggle('open');
+    });
+});
