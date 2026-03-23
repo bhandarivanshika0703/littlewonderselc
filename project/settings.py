@@ -3,14 +3,22 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# ======================
 # SECURITY
+# ======================
 SECRET_KEY = 'django-insecure-(x&+!t37j_3e%j3(ogad5%^7q#&sgy2h70iigs$k9mt()dw@t+'
 
-DEBUG = True
+DEBUG = False  # ✅ IMPORTANT for production
 
-ALLOWED_HOSTS = ['*']  # IMPORTANT FOR DEPLOY
+ALLOWED_HOSTS = [
+    "littlewonderselc.onrender.com",
+    "localhost",
+    "127.0.0.1"
+]
 
+# ======================
 # APPLICATIONS
+# ======================
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -21,10 +29,12 @@ INSTALLED_APPS = [
     'app',
 ]
 
-# MIDDLEWARE (WHITENOISE ADDED)
+# ======================
+# MIDDLEWARE
+# ======================
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # ✅ ADD THIS
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # ✅ REQUIRED
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -35,10 +45,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'project.urls'
 
+# ======================
+# TEMPLATES
+# ======================
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR, "templates"],
+        'DIRS': [BASE_DIR / "templates"],  # ✅ FIXED
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -52,7 +65,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
+# ======================
 # DATABASE
+# ======================
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -60,7 +75,9 @@ DATABASES = {
     }
 }
 
+# ======================
 # PASSWORD VALIDATION
+# ======================
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -76,27 +93,35 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# ======================
 # INTERNATIONAL
+# ======================
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
+# ======================
 # STATIC FILES
+# ======================
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # ✅ REQUIRED
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# WHITENOISE STORAGE
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# ✅ FIXED (no hashing issue for video)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
-# MEDIA FILES (IMAGES)
+# ======================
+# MEDIA FILES
+# ======================
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# ======================
 # DEFAULT PRIMARY KEY
+# ======================
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
