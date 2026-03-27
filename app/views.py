@@ -53,8 +53,7 @@ def chefkitchen(request):
     return render(request,"our-facilities/chef-kitchen.html")
 
 
-def gallery(request):
-    return render(request,"gallery.html")
+
 
 
 def kinder(request):
