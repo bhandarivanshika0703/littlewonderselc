@@ -687,14 +687,20 @@
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">Featured Photos</h2>
            <div class="gallery-grid">
     
-    {% for img in images %}
-        <div class="gallery-item h-64">
+ {% for img in images %}
+    <div class="gallery-item h-64">
+
+        {% if img.image %}
             <img src="{{ img.image.url }}" 
                  alt="{{ img.title|default:'Gallery Image' }}" 
-                 class="w-full h-full object-cover" 
-                 loading="lazy">
-        </div>
-    {% empty %}
+                 class="w-full h-full object-cover">
+        {% else %}
+            <img src="{% static 'images1/gallery15.webp' %}" 
+                 class="w-full h-full object-cover">
+        {% endif %}
+
+    </div>
+{% endfor %}
         <!-- 👇 fallback (your original images, nothing breaks) -->
         <div class="gallery-item h-64"><img src="{% static 'images1/gallery15.webp' %}" class="w-full h-full object-cover"></div>
         <div class="gallery-item h-64"><img src="{% static 'images1/gallery17.webp' %}" class="w-full h-full object-cover"></div>
