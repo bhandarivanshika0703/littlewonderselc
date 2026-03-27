@@ -8,12 +8,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ======================
 SECRET_KEY = 'django-insecure-(x&+!t37j_3e%j3(ogad5%^7q#&sgy2h70iigs$k9mt()dw@t+'
 
-DEBUG = True  # Keep True for now (local testing)
+DEBUG = False  # Keep True for now (local testing)
 
 ALLOWED_HOSTS = [ "littlewonderselc.onrender.com",
     "localhost",
     "127.0.0.1"]
-
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # ======================
 # APPLICATIONS
@@ -33,9 +33,9 @@ INSTALLED_APPS = [
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dihfb587b',
-    'API_KEY': '538882855615321',
-    'API_SECRET': '4L2MRiUsgfCb0BKc0z',
+      'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
 }
 
 # ======================
@@ -129,7 +129,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # ✅ FIXED (NO HASHING ISSUE)
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # ======================
