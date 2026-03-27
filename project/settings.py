@@ -10,7 +10,9 @@ SECRET_KEY = 'django-insecure-(x&+!t37j_3e%j3(ogad5%^7q#&sgy2h70iigs$k9mt()dw@t+
 
 DEBUG = True  # Keep True for now (local testing)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [ "littlewonderselc.onrender.com",
+    "localhost",
+    "127.0.0.1"]
 
 
 # ======================
@@ -126,6 +128,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 # ======================
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://littlewonderselc.onrender.com"
+]
 
 
 # ======================
